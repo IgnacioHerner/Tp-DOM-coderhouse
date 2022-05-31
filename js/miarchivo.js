@@ -74,6 +74,11 @@ const boton1 = document.getElementById("boton1");
 boton1.addEventListener("click", ()=>{
   document.body.setAttribute("style", "background-color: #082032");
 });
+// EVENTOS PARA HACER LIGHT MODE
+const boton2 = document.getElementById("boton2");
+boton2.addEventListener("click", ()=>{
+  document.body.setAttribute("style", "background-color: white");
+});
 
 // Preguntar si es mayor a 18 años //
 const edadDelUsuario = parseInt(prompt("¿Cual es tu edad?"));
