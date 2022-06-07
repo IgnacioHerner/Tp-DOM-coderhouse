@@ -2,3 +2,12 @@
 
     font-family: 'Blaka Hollow', cursive;
 }
+
+.forms {
+    margin: auto;
+    width: 40%;
+   }
+   .forms input {
+  margin: 5px 0 10px 0;
+    display: block;
+   }
