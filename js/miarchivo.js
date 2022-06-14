@@ -70,14 +70,29 @@ for (const bebida of data) {
 
 // EVENTOS BOTON PARA HACER DARK MODE
 
+
+
 const boton1 = document.getElementById("boton1");
 boton1.addEventListener("click", ()=>{
-  document.body.setAttribute("style", "background-color: #082032");
-});
-// EVENTOS PARA HACER LIGHT MODE
-const boton2 = document.getElementById("boton2");
-boton2.addEventListener("click", ()=>{
-  document.body.setAttribute("style", "background-color: white");
+
+  Swal.fire({
+    title:'Hola',
+    text:'Que tema desea?',
+    icon:'question',
+    confirmButtonText:'Dark Mode',
+    cancelButtonText:'Light Mode',
+    showCancelButton: true,
+  }).then((result)=>{
+    if(result.isConfirmed)
+    {
+      document.body.setAttribute("style", "background-color: #082032");
+    }
+    else
+    {
+      document.body.setAttribute("style", "background-color: white");
+    }
+  })
+  
 });
 
 // Preguntar si es mayor a 18 años //
