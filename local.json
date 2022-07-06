@@ -1,0 +1,31 @@
+[
+    {
+        "tipo": "fermentada",
+        "nombre" : "cerveza",
+        "marca": "heineken"
+    },
+
+    {
+        "tipo": "destilada",
+        "nombre": "vodka",
+        "marca": "smirnoff"
+    },
+
+    {
+        "tipo": "destilada",
+        "nombre" : "whisky",
+        "marca": "johnnie walker"
+    },
+
+    {
+        "tipo": "fermentada",
+        "nombre" : "champagne",
+        "marca": "chandon"
+    },
+    
+    {
+        "tipo": "destilada",
+        "nombre" : "ron",
+        "marca": "havana club"
+    }
+]

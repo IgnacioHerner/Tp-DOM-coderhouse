@@ -9,24 +9,28 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>DOM</title>
+    <title>Pagina Web ignacio herner</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="forms.html">Formulario</a></li>
+                <li><a href="forms.html" class="btn">Formulario</a></li>
             </ul>
             
         </nav>
     <div>
         <button id="boton1" class="btn">Elegir tema</button>
-
+        <div>
+              <input class="btn" type="button" id="boton1" onclick="miFuncion()" value="Pedir datos">
+        </div>  
+        
     </div>
     <div class="container">
         <h1>Bebidas</h1>
         <div id="app" class="row row-cols-1 row-cols-md-3 g-4"></div>
     </div>
+
 
 
     <script src="js/miarchivo.js"></script>

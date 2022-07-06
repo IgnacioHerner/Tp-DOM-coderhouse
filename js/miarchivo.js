@@ -95,67 +95,97 @@ boton1.addEventListener("click", ()=>{
   
 });
 
-// Preguntar si es mayor a 18 años //
-const edadDelUsuario = parseInt(prompt("¿Cual es tu edad?"));
-if (edadDelUsuario >= 18){
-    alert("Eres mayor de edad");
+ const tomarDatos = () => {
+   let nombre = document.getElementById("nombre").value;
+   let apellido = document.getElementById("apellido").value;
+   let edad = parseInt(document.getElementById("edad").value);
 
-// Solicitar Nombre de usuario //
+ console.log(nombre, apellido, edad);
 
-function solicitarNombre() {
-    let nombreIngresado = prompt("Ingresar Nombre y Apellido")
-    alert("El nombre ingresado es: " + nombreIngresado)
-}
+ if (parseInt(edad) >= 18) {
+   console.log("Es mayor de edad, puede ingresar");
+ } else {
+   console.log("Debe ser mayor de 18 años")
+ }
+ }
 
-solicitarNombre();
+  //Preguntar si es mayor a 18 años 
+ const edadDelUsuario = parseInt(prompt("¿Cual es tu edad?"));
+ if (edadDelUsuario >= 18){
+     alert("Eres mayor de edad");
 
-// Agegar productos
-class Productos {
-    constructor(bebida, precio, stock) {
-      this.bebida = bebida.toUpperCase();
-      this.precio = parseFloat(precio);
-      this.stock = parseInt(stock);
-    }
-  }
+  //Solicitar Nombre de usuario 
+
+ function solicitarNombre() {
+     let nombreIngresado = prompt("Ingresar Nombre y Apellido")
+     alert("El nombre ingresado es: " + nombreIngresado)
+ }
+
+ solicitarNombre();
+
+  //Agegar productos
+ class Productos {
+     constructor(bebida, precio, stock) {
+       this.bebida = bebida.toUpperCase();
+       this.precio = parseFloat(precio);
+       this.stock = parseInt(stock);
+     }
+   }
   
-  let CantidadArticulos = Number(prompt("Cuantas bebidas deseas agregar?"));
-  const arrayBebibas = [];
+
+   let CantidadArticulos = Number(prompt("Cuantas bebidas deseas agregar?"));
+   const arrayBebibas = [];
   
-  for (let i = 0; i<CantidadArticulos; i++) {
-    arrayBebibas[i] = new Productos(
-      prompt("Ingrese el nombre de la bebida: "),
-      prompt("Ingrese el precio del producto: "),
-      prompt("Ingrese el stock del producto: ")
-    )
-  }
+   for (let i = 0; i<CantidadArticulos; i++) {
+     arrayBebibas[i] = new Productos(
+       prompt("Ingrese el nombre de la bebida: "),
+       prompt("Ingrese el precio del producto: "),
+       prompt("Ingrese el stock del producto: ")
+     )
+   }
 
-  console.log(arrayBebibas);
+   console.log(arrayBebibas);
 
-  // Para agregar mas bebibas
+    //Para agregar mas bebibas
 
-  arrayBebibas.push("Campari")
+   arrayBebibas.push("Campari")
 
-  console.log(arrayBebibas);
+   console.log(arrayBebibas);
 
 
   
-} else {
+ } else {
 
-    alert("Eres menor de edad");
-}
+     alert("Eres menor de edad");
+ }
 
 // Forms localStorage
 
 function guardarDatos(){
   localStorage.nombre = document.getElementById("nombre").value;
-  localStorage.password = document.getElementById("password").value;
+  localStorage.apellido = document.getElementById("apellido").value;
  }
  
  function recuperarDatos(){
   if ((localStorage.nombre != undefined) && (localStorage.password != undefined)) {
-   document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + "<br/> Password: " + localStorage.password;
+   document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + "<br/> Apellido: " + localStorage.apellido;
   }
   else{
    document.getElementById("datos").innerHTML = "No has introducido tu nombre y tu password";
   }
+ }
+
+
+ function miFuncion() 
+ {
+    fetch('local.json') 
+    .then(Response=>{
+      return Response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error=>{
+      console.log(error)
+    })
  }
